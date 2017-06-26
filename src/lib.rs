@@ -190,6 +190,8 @@ impl<'a> Images<'a> {
                         }
                     })
                     .expect("expected status object")
+            } else if obj.contains_key("aux") {
+                Output::Stream("FIXME: Not sure what goes here".to_owned())
             } else if let Some(error) = obj.get("error") {
                 Output::Err(
                     error
