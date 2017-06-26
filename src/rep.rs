@@ -30,6 +30,7 @@ pub struct ImageDetails {
     pub Author: String,
     pub Comment: String,
     pub Config: Config,
+    pub Container: String,
     pub Created: String,
     pub DockerVersion: String,
     pub Id: String,

@@ -990,6 +990,7 @@ impl NetworkCreateOptionsBuilder {
 }
 
 /// Interface for connect container to network
+#[allow(non_snake_case)]
 pub struct ContainerConnectionOptions {
     pub Container: Option<String>,
     params: HashMap<&'static str, String>,
