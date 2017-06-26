@@ -136,6 +136,14 @@ pub struct HostConfig {
 
 #[derive(Clone, Debug, RustcEncodable, RustcDecodable)]
 #[allow(non_snake_case)]
+pub struct Healthcheck {
+    pub Interval: Option<u64>,
+    pub Test: Vec<String>,
+    pub Timeout: Option<u64>,
+}
+
+#[derive(Clone, Debug, RustcEncodable, RustcDecodable)]
+#[allow(non_snake_case)]
 pub struct Config {
     pub AttachStderr: bool,
     pub AttachStdin: bool,
@@ -145,6 +153,7 @@ pub struct Config {
     pub Entrypoint: Option<Vec<String>>,
     pub Env: Option<Vec<String>>,
     // ExposedPorts
+    pub Healthcheck: Option<Healthcheck>,
     pub Hostname: String,
     pub Image: String,
     pub Labels: HashMap<String, String>,
