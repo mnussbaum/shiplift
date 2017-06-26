@@ -11,7 +11,7 @@ pub fn dir<W>(buf: W, path: &str) -> io::Result<()>
 where
     W: Write,
 {
-    let archive = Archive::new(GzEncoder::new(buf, Compression::Best));
+    let archive = Archive::new(GzEncoder::new(buf, Compression::Default));
     fn bundle<F>(dir: &Path, f: &F, bundle_dir: bool) -> io::Result<()>
     where
         F: Fn(&Path) -> io::Result<()>,
